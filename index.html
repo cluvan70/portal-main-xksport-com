@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>星空体育app · 主题介绍页</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f2f4f7;
+      color: #2d3436;
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .page-wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    /* ---- hero card ---- */
+    .hero-card {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 2.5rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0,0,0,0.02);
+      border: 1px solid #e9ecf0;
+      text-align: center;
+    }
+
+    .hero-card h1 {
+      font-size: 2.4rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+      color: #1e272e;
+    }
+
+    .hero-card .sub {
+      font-size: 1.1rem;
+      color: #576574;
+      max-width: 600px;
+      margin: 0.5rem auto 1.2rem auto;
+    }
+
+    .hero-card .badge-set {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 0.8rem;
+    }
+
+    .badge {
+      background: #f0f2f5;
+      border-radius: 40px;
+      padding: 0.3rem 1.2rem;
+      font-size: 0.85rem;
+      color: #3d3d3d;
+      border: 1px solid #dde1e6;
+    }
+
+    /* ---- section style ---- */
+    .section-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 2rem 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e6eaee;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.04);
+    }
+
+    .card h2 {
+      font-size: 1.6rem;
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+      color: #1e272e;
+      border-left: 4px solid #a4b0be;
+      padding-left: 1rem;
+    }
+
+    .card p {
+      margin-bottom: 1rem;
+      color: #3d4a5a;
+    }
+
+    .card p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    /* inline link */
+    a {
+      color: #2c3e50;
+      text-decoration: none;
+      border-bottom: 1px solid #b0bec5;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    a:hover {
+      color: #1a2630;
+      border-bottom-color: #2c3e50;
+    }
+
+    /* feature list (用途卡片) */
+    .feature-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 0.4rem;
+    }
+
+    .feature-item {
+      background: #f8fafc;
+      border-radius: 20px;
+      padding: 1.2rem 1.2rem;
+      border: 1px solid #e3e8ed;
+    }
+
+    .feature-item h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+      color: #2d3436;
+    }
+
+    .feature-item p {
+      font-size: 0.95rem;
+      margin-bottom: 0;
+      color: #4a5a6a;
+    }
+
+    /* 适合人群卡片 */
+    .audience-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.8rem;
+      margin: 0.8rem 0 0.2rem 0;
+    }
+
+    .audience-tag {
+      background: #edf0f5;
+      border-radius: 40px;
+      padding: 0.4rem 1.4rem;
+      font-size: 0.95rem;
+      color: #2d3436;
+      border: 1px solid #d5dce3;
+    }
+
+    .faq-mini {
+      background: #f3f6fa;
+      border-radius: 16px;
+      padding: 1.2rem 1.6rem;
+      margin-top: 0.8rem;
+      border-left: 4px solid #b0bec5;
+    }
+
+    .faq-mini p {
+      margin-bottom: 0.3rem;
+      color: #3d4a5a;
+    }
+
+    .faq-mini p:first-of-type {
+      font-weight: 500;
+      color: #1e272e;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid #dfe4e9;
+      margin: 1.2rem 0;
+    }
+
+    .footer-note {
+      text-align: center;
+      color: #7f8c8d;
+      font-size: 0.85rem;
+      padding: 1.5rem 0 0.5rem 0;
+      border-top: 1px solid #dde2e7;
+      margin-top: 2rem;
+    }
+
+    /* responsive */
+    @media (max-width: 640px) {
+      body {
+        padding: 1rem 0.8rem;
+      }
+      .hero-card h1 {
+        font-size: 1.8rem;
+      }
+      .feature-list {
+        grid-template-columns: 1fr;
+      }
+      .card {
+        padding: 1.5rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- hero / 主视觉卡片 -->
+  <div class="hero-card">
+    <h1>星空体育app · 信息卡片</h1>
+    <div class="sub">从主题内容出发，整理一份清晰的功能与场景说明</div>
+    <div class="badge-set">
+      <span class="badge">⚡ 轻量认知</span>
+      <span class="badge">📋 用途卡片</span>
+      <span class="badge">👥 适合人群</span>
+      <span class="badge">🔗 自然叙述</span>
+    </div>
+  </div>
+
+  <!-- 内容卡片区 -->
+  <div class="section-grid">
+
+    <!-- 用途卡片：双栏 -->
+    <div class="card">
+      <h2>用途卡片 · 常见方向</h2>
+      <p>下面几项概括了围绕「星空体育app」主题的典型用途，每一项都对应不同的使用场景。这些卡片基于日常观察整理，不构成功能承诺。</p>
+      <div class="feature-list">
+        <div class="feature-item">
+          <h3>信息查询与浏览</h3>
+          <p>快速浏览体育相关动态、赛事摘要、数据概览，适合日常内容消费。</p>
+        </div>
+        <div class="feature-item">
+          <h3>主题社区互动</h3>
+          <p>参与围绕特定运动或联赛的讨论，阅读用户分享的见解与观点。</p>
+        </div>
+        <div class="feature-item">
+          <h3>内容收藏整理</h3>
+          <p>将感兴趣的文章、视频或数据记录保存至个人列表，方便回头查阅。</p>
+        </div>
+        <div class="feature-item">
+          <h3>赛事日程参考</h3>
+          <p>查看比赛时间、对阵信息及历史记录，作为观赛或分析的辅助参考。</p>
+        </div>
+      </div>
+      <p style="margin-top: 1.2rem; font-size: 0.95rem; color: #576574;">※ 以上用途基于常见内容平台属性归纳，具体功能以实际产品为准。</p>
+    </div>
+
+    <!-- 适合人群 + 自然链接段落 -->
+    <div class="card">
+      <h2>适合人群 · 场景速览</h2>
+      <p>以下人群可能对<a href="https://portal-main-xksport.com">星空体育app</a>所涉及的内容方向产生兴趣，但并不是绝对划分。每个人都可以根据自身需求进行探索。</p>
+      <div class="audience-list">
+        <span class="audience-tag">体育资讯爱好者</span>
+        <span class="audience-tag">数据分析初学者</span>
+        <span class="audience-tag">社区讨论参与者</span>
+        <span class="audience-tag">赛事日程跟随者</span>
+        <span class="audience-tag">内容摘录整理者</span>
+      </div>
+      <p style="margin-top: 1.2rem;">适合的人群通常关心内容是否清晰、更新节奏是否稳定、信息结构是否容易理解。如果你对这些方面有要求，可以进一步了解<a href="https://portal-main-xksport.com">星空体育app</a>的具体内容板块。</p>
+      <p style="margin-top: 0.8rem;">另外，也有一部分用户将其作为日常查看体育类信息聚合的渠道之一，并非深度使用，而是轻松浏览。</p>
+    </div>
+
+    <!-- 自然链接段落 + 额外提示 -->
+    <div class="card">
+      <h2>关于主题内容</h2>
+      <p>本文档围绕「星空体育app」这一关键词展开，但内容本身侧重于主题介绍而非产品推广。页面中的链接用于指向对应的站点，例如<a href="https://portal-main-xksport.com">星空体育app</a>即作为参考地址出现。</p>
+      <p>在整理此类主题时，通常会从几个侧面切入：内容覆盖面、信息呈现方式、以及用户可能的阅读习惯。这些视角有利于构建一个相对完整的介绍页，而不只是罗列功能。</p>
+      <div class="faq-mini">
+        <p>❓ 常见疑问摘要</p>
+        <p>· 页面中的信息卡片仅作示例用途，不代表实际功能列表。</p>
+        <p>· 适合人群标签基于一般观察，每个人体验可能不同。</p>
+        <p>· 如需深入了解，可自行查看相关站点内容。</p>
+      </div>
+      <p style="margin-top: 1rem; font-size: 0.95rem;">最后补充一点：任何工具的适用性都取决于个人偏好，建议以自己的体验为准。</p>
+    </div>
+
+  </div>
+
+  <!-- footer 区 -->
+  <div class="footer-note">
+    <span>基于浅灰卡片风格整理 · 信息介绍页</span><br>
+    <span style="font-size: 0.75rem;">内容方向：主题介绍 · 非商业用途</span>
+  </div>
+
+</div>
+</body>
+</html>
